@@ -1,3 +1,17 @@
+# sleiss-comments:
+
+Run `docker-compose -f src/main/docker/kafka.yml up` to start up zookeeper and kafka.
+
+Run `npm start` to start the client (if needed)
+
+Run `./mvnw` to run the server
+
+Run `curl -N http://localhost:8080/api/jhipster-kafka/consume?topic=topic1` to listen for changes to topic `topic1`.
+
+Send a `POST`-request to `http://localhost:8080/api/jhipster-kafka/publish/topic1?key=key1&message=message123` to send a message to topic `topic1`.
+
+Adjustments to the security-configuration have already been performed.
+
 # jhipster
 
 This application was generated using JHipster 6.8.0, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v6.8.0](https://www.jhipster.tech/documentation-archive/v6.8.0).
