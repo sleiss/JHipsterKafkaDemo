@@ -12,6 +12,8 @@ Send a `POST`-request to `http://localhost:8080/api/jhipster-kafka/publish/topic
 
 Adjustments to the security-configuration have already been performed.
 
+If you want to run JHipster within docker-compose, build the image using `./mvnw package -Pprod verify jib:dockerBuild` and start the stack using `docker-compose -f src/main/docker/app.yml up`.
+
 # jhipster
 
 This application was generated using JHipster 6.8.0, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v6.8.0](https://www.jhipster.tech/documentation-archive/v6.8.0).

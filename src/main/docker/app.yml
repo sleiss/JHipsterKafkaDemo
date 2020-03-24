@@ -1,7 +1,7 @@
 version: '2'
 services:
   jhipster-app:
-    image: jhipster
+    image: 'jhipster-group1'
     environment:
       - _JAVA_OPTIONS=-Xmx512m -Xms256m
       - SPRING_PROFILES_ACTIVE=prod,swagger
@@ -11,6 +11,17 @@ services:
       - KAFKA_BOOTSTRAPSERVERS=kafka:9092
     ports:
       - 8080:8080
+  jhipster-app2:
+    image: 'jhipster-group2'
+    environment:
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m
+      - SPRING_PROFILES_ACTIVE=prod,swagger
+      - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
+      - SPRING_DATASOURCE_URL=jdbc:mysql://jhipster-mysql:3306/jhipster?useUnicode=true&characterEncoding=utf8&useSSL=false&createDatabaseIfNotExist=true
+      - JHIPSTER_SLEEP=40 # gives time for other services to boot before the application
+      - KAFKA_BOOTSTRAPSERVERS=kafka:9092
+    ports:
+      - 8081:8080
   jhipster-mysql:
     extends:
       file: mysql.yml
