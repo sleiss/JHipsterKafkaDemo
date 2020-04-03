@@ -50,9 +50,9 @@ public class MessageLoggerInterceptor implements ChannelInterceptor {
         });
     }
 
-    @KafkaListener(topics = "websocket", groupId = "group2")
+    @KafkaListener(topics = "websocket", groupId = "${spring.application.name}")
     public void listen(String message) {
-        logger.info("Received message in group group2: " + message);
+        logger.info("Received message in group ${spring.application.name}: " + message);
     }
 
     @Override

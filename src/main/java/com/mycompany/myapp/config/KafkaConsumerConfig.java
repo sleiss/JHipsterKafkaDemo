@@ -32,7 +32,7 @@ public class KafkaConsumerConfig {
             kafkaProperties.getBootStrapServers());
         props.put(
             ConsumerConfig.GROUP_ID_CONFIG,
-            "group2");
+            "${spring.application.name}");
         props.put(
             ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG,
             StringDeserializer.class);
